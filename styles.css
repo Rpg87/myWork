@@ -1,8 +1,9 @@
 /* font-family: 'Abril Fatface',
 serif;
+font-family: 'Lora',
+serif;
 font-family: 'Oswald',
 sans-serif; */
-
 
 body {
     margin: 0;
@@ -153,12 +154,12 @@ grid-template-areas: 'namePhoto .'; */
 
 }
 
-.emojis-container {
+.emoAndCont-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+
 }
 
 #game-modal {
@@ -180,6 +181,11 @@ grid-template-areas: 'namePhoto .'; */
     position: relative;
     overflow: hidden;
     margin: 20px auto;
+}
+
+.btn-modal {
+    font-family: 'Lora',
+        serif;
 }
 
 #start,
