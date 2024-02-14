@@ -7,9 +7,34 @@ const messageModal = document.getElementById('messageModal');
 const messageText = document.getElementById('messageText');
 
 
+const music = document.getElementById('music');
+let song1 = new Audio('./music/saltillo-hollow.mp3');
+
+
+
 // CAMBIAR FUENTE DE LETRA CLICK
 // MODIFICAR TEXTO UNA VEZ CLICKADO
 
+
+/*function for music */
+
+
+music.addEventListener('click', function (e) {
+    let changeStyle = e.target.classList;
+    if (changeStyle.contains('fa-music')) {
+        changeStyle.remove('fa-music');
+        changeStyle.add('fa-pause');
+        song1.play();
+    } else {
+        changeStyle.remove('fa-pause');
+        changeStyle.add('fa-music');
+        song1.pause();
+    }
+
+
+
+
+})
 
 // copy email to clipboard
 const userCopyTxt = (txt) => {

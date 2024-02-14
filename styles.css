@@ -5,6 +5,10 @@ serif;
 font-family: 'Oswald',
 sans-serif; */
 
+html {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: 'Abril Fatface , Arial';
@@ -54,6 +58,11 @@ nav li {
     margin-right: 20px;
 }
 
+.space-music {
+    margin-right: 50px;
+    font-size: 1.2rem;
+}
+
 .nav-mobile-toggle {
     display: none;
     font-size: 20px;
@@ -73,6 +82,8 @@ grid-template-areas: 'namePhoto .'; */
 .namePhoto {
 
     display: grid;
+    /* usar repeat(2, 1fr)*/
+    /* grid-template-columns: 1fr 1fr; */
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 120px;
 
@@ -95,24 +106,30 @@ grid-template-areas: 'namePhoto .'; */
 }
 
 .photo {
-    max-width: 300px;
-    min-width: 115px;
-    width: 100%;
+    /* max-width: 300px; */
+    /* min-width: 100px; */
+
+    width: clamp(200px, 20vw, 329px);
+    /* max-height: 490px;
+min-height: 320px;
+height: 100%; */
     align-items: center;
     grid-area: photo;
     border: 2px solid black;
     border-style: dashed double;
     border-radius: 50px 50px 0 0;
-    margin-left: 20px;
+
 }
 
 .contNames {
     grid-area: contNames;
+    width: clamp(138px, 20vw, 325px);
+
 }
 
 .nameR {
     grid-area: nameR;
-    font-size: clamp(2.2rem, 5vw, 5rem);
+    font-size: clamp(2.1rem, 5vw, 4.9rem);
     /* font-size: 5rem; */
     justify-content: end;
     cursor: pointer;
@@ -122,7 +139,7 @@ grid-template-areas: 'namePhoto .'; */
 
 .nameP {
     grid-area: nameP;
-    font-size: clamp(2.2rem, 5vw, 5rem);
+    font-size: clamp(2.1rem, 5vw, 4.9rem);
     cursor: pointer;
 
 
@@ -130,7 +147,7 @@ grid-template-areas: 'namePhoto .'; */
 
 .nameG {
     grid-area: nameG;
-    font-size: clamp(2.2rem, 5vw, 5rem);
+    font-size: clamp(2.1rem, 5vw, 4.9rem);
     cursor: pointer;
 
 }
@@ -214,7 +231,8 @@ grid-template-areas: 'namePhoto .'; */
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-end;
+        cursor: pointer;
 
     }
 
