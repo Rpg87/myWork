@@ -8,6 +8,7 @@ const messageText = document.getElementById('messageText');
 
 
 const music = document.getElementById('music');
+let song = new Audio('./music/chanson.mp3');
 let song1 = new Audio('./music/saltillo-hollow.mp3');
 
 
@@ -16,25 +17,55 @@ let song1 = new Audio('./music/saltillo-hollow.mp3');
 // MODIFICAR TEXTO UNA VEZ CLICKADO
 
 
-/*function for music */
+/*logic for music */
+
+let isPlaying = false;
+let currentSongIndex = 0;
+let playlist = [song, song1];
+
+
+function playCurrentSong() {
+    playlist[currentSongIndex].play();
+    isPlaying = true;
+}
+
+function pauseCurrentSong() {
+    playlist[currentSongIndex].pause();
+    isPlaying = false;
+}
 
 
 music.addEventListener('click', function (e) {
+
+
     let changeStyle = e.target.classList;
-    if (changeStyle.contains('fa-music')) {
+
+    if (!isPlaying) {
         changeStyle.remove('fa-music');
         changeStyle.add('fa-pause');
-        song1.play();
+        playCurrentSong();
     } else {
         changeStyle.remove('fa-pause');
         changeStyle.add('fa-music');
-        song1.pause();
+        pauseCurrentSong();
     }
 
-
-
-
 })
+
+
+/* NOTA: AÑADIR BTN Y ADDVE PARA PASAR CANCIÓN */
+function nextSong() {
+    pauseCurrentSong();
+    currentSongIndex = (currentSongIndex + 1) % playlist.length;
+    playCurrentSong();
+}
+
+playlist.forEach((audio) => {
+    audio.addEventListener('ended', function () {
+        currentSongIndex = (currentSongIndex + 1) % playlist.length;
+        playCurrentSong();
+    });
+});
 
 // copy email to clipboard
 const userCopyTxt = (txt) => {
