@@ -70,7 +70,7 @@ playlist.forEach((audio) => {
 // copy email to clipboard
 const userCopyTxt = (txt) => {
     navigator.clipboard.writeText(txt)
-        .then(() => showMsg('Copied '))
+        .then(() => showMsg('Copied. I look forward to your message '))
         .catch(error => showMsg('Error copying text: ' + error));
 }
 
@@ -181,3 +181,5 @@ document.getElementById('close-modal').addEventListener('click', function () {
     clearInterval(emojiInterval);
     document.getElementById('game-modal').style.display = 'none';
 });
+
+

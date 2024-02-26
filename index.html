@@ -28,7 +28,7 @@
                             class="fa-brands fa-github"></i></a></li>
                 <li><a href="#proyectos">Projects</a></li>
                 <li><a href="#contacto">Contact</a></li>
-                <li><i class="fa-solid fa-music space-music" id="music"></i></li>
+                <li><i class="fa-solid fa-music space-music navMusic" id="music"></i></li>
             </ul>
 
         </nav>
@@ -65,16 +65,29 @@
             </p>
             <div class="emoAndCont-container">
                 <!-- <h2>Embrace the Code: Where Creativity Meets Playfulness 🚀</h2> -->
-                <h2>You may contact me here</h2>
+                <div class="container-contact">
+                    <h2 class="contact-me">You may <span class="contact-me-bold">contact me</span> here</h2>
+                </div>
+                <div class="container-icons"> <a href="https://www.linkedin.com/in/raquel-pe-go/" rel="noopener"
+                        target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Rpg87" rel="noopener" target="_blank"><i
+                            class="fa-brands fa-github"></i></a>
+                </div>
                 <div id="modalContainer">
                     <div id="messageModal" class="modal">
                         <p id="messageText"> Click on my email</p>
                     </div>
                 </div>
-                <h3 class="email">raquel.gonzape3@gmail.com <i class="fa-solid fa-envelope-open-text"></i></h3>
-                <p>Añadir mi correo y datos de contacto</p>
+                <h3 class="email" id="email">raquel.gonzape3@gmail.com <a href="mailto:raquel.gonzape3@gmail.com"> <i
+                            class="fa-solid fa-envelope-open-text iconMail "></i></a></h3>
 
-                <button class="btn-modal" id="open-modal">Open Mini Game</button>
+
+                <p class="phrase-game">Unwind with the melody, press play above; for a playful break, venture below and
+                    unlock mini-game
+                    joy.</p>
+                <button class="btn-modal" id="open-modal">
+                    Open Mini Game
+                </button>
             </div>
 
             <!-- emoji game modal window -->
@@ -88,7 +101,15 @@
             </div>
 
         </section>
+
+        <h2 class="projects-title">Projects</h2>
+        <section id="container-projects">
+
+        </section>
+
+
     </main>
+    <script src="projectsData.js"></script>
     <script src="main.js"></script>
 </body>
 
