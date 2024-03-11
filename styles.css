@@ -71,7 +71,6 @@ main {
 }
 
 .namePhoto {
-
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 120px 320px;
@@ -266,8 +265,69 @@ main {
     margin: 10px;
 }
 
+.big-container-projects {
+    display: none;
+    margin-top: 50px;
+}
 
+.carousel {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+}
 
+.carousel-item {
+    flex: 0 0 auto;
+    width: 50%;
+    padding: 0 8px;
+    box-sizing: border-box;
+    position: relative;
+
+}
+
+.carousel-image {
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+}
+
+.carousel-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.carousel-title,
+.carousel-description,
+.carousel-demo-link,
+.carousel-code-link {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 5px 0;
+
+}
+
+.carousel-demo-link,
+.carousel-code-link {
+    display: block;
+    margin-top: 5px;
+
+}
+
+.carousel-code-link {
+    color: #333;
+
+}
 
 @media (max-width: 768px) {
     nav ul {
@@ -302,7 +362,15 @@ main {
     }
 }
 
+
+
 @media (min-width: 768px) {
+
+    .big-container-projects {
+        display: inline;
+        margin-top: 50px;
+    }
+
     .namePhoto {
         padding-top: 50px;
         grid-template-columns: 1fr 1fr 1fr;
@@ -327,7 +395,8 @@ main {
     font-size: clamp(1.5rem, 5vw, 3.5rem);
 }
 
-/* NOTA: ajustar tamaño y crear carrusel mv */
+
+
 
 #container-projects {
 
